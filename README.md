@@ -1,0 +1,3 @@
+# py-singleton
+
+Singleton pattern
