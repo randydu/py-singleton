@@ -19,7 +19,7 @@ pip install py-singleton
 
     ```python
     @singleton
-    class Server:pass
+    class Server(object):pass
 
     srv = Server()
     ```
