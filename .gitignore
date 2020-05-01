@@ -62,3 +62,6 @@ docs/_build/
 # PyBuilder
 target/
 
+# pytest
+.pytest_cache/
+

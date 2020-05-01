@@ -1,3 +1,3 @@
 # py-singleton
 
-Singleton pattern
+Singleton pattern for python 2 & 3

@@ -2,7 +2,7 @@ from py_singleton import singleton
 
 def test_singleton():
     @singleton
-    class A:
+    class A(object):
         count = 0
         def __init__(self):
             A.count += 1

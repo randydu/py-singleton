@@ -2,6 +2,10 @@
     function utilities
 """
 
+__version__ = "0.9.0"
+
+
+
 def _singleton1(cls):
     """ class decorator to implement singleton pattern 
     
@@ -23,6 +27,7 @@ def _singleton1(cls):
     """
     cls._singleton = { "inst": None, "inited": False, "__init__": None }
 
+    @classmethod
     def new(c, *args):
         if c._singleton['inst'] is None:
             c._singleton['inst'] = object.__new__(c)
@@ -76,7 +81,7 @@ def _singleton2(cls):
         def __init__(self, *args, **kwargs):
             if not self.inited:
                 self.inited = True
-                super().__init__(*args, **kwargs) 
+                super(SingleCls, self).__init__(*args, **kwargs) 
 
         @classmethod
         def instance(cls):
@@ -84,11 +89,12 @@ def _singleton2(cls):
 
     # simulate the name of input class
     SingleCls.__name__ = cls.__name__
-    SingleCls.__qualname__ = cls.__qualname__
+    if hasattr(cls, "__qualname__"): # python 2
+        SingleCls.__qualname__ = cls.__qualname__
 
     return SingleCls
 
 
-# select which impl to expose?
+# select which impl to use?
 singleton = _singleton2
 
