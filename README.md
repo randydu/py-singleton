@@ -2,15 +2,28 @@
 
 Singleton pattern for python 2 & 3.
 
-## Usage
 
-### install
+## Install
 
 ```sh
 pip install py-singleton
 ```
 
-### API
+## Test
+
+in the root folder, run pytest:
+
+```bash
+pytest
+```
+
+## Dependencies
+
+None
+
+unit test needs __pytest__.
+
+## API
 
 - Apply class decorator _singleton_ to any class;
 - Expected behaviors:
@@ -32,7 +45,7 @@ pip install py-singleton
 
   - the function \__init\__() of decorated class will be called only once when the first instance is created.
 
-### Example
+## Example
 
 ```python
 
@@ -52,3 +65,10 @@ from py_singleton import singleton
     assert id(a1) == id(a2)
     assert id(a1) == id(a3)
 ```
+
+## Limitation
+
+For best performance, the code to create instance is not thread-safe, however, after the instance is created it should
+be safe for multi-threading.
+
+It is recommended to call __instance()__ once during the initial phrase of your app in a single thread.
