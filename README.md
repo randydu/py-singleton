@@ -43,7 +43,7 @@ unit test needs __pytest__.
     srv = Server.instace()
     ```
 
-  - the function \__init\__() of decorated class will be called only once when the first instance is created.
+  - the function \__init\__() of decorated class will be called once and only once when the instance is created.
 
 ## Example
 
