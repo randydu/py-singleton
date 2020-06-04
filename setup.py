@@ -39,7 +39,7 @@ setup(name=package_name,
     keywords=["singleton"],
     license="MIT",
     classifiers=[
-    'Development Status :: 4 - Beta',
+    'Development Status :: 5 - Production/Stable',
     'Intended Audience :: Developers', 
     'Operating System :: OS Independent',
     'Topic :: Software Development :: Libraries',
