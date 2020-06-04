@@ -1,15 +1,18 @@
-# py-singleton
+py-singleton
+============
 
 Singleton pattern for python 2 & 3.
 
 
-## Install
+Install
+-------
 
 ```sh
 pip install py-singleton
 ```
 
-## Test
+Test
+----
 
 in the root folder, run pytest:
 
@@ -17,35 +20,39 @@ in the root folder, run pytest:
 pytest
 ```
 
-## Dependencies
+Dependencies
+------------
 
 None
 
 unit test needs __pytest__.
 
-## API
+API
+----
 
 - Apply class decorator _singleton_ to any class;
 - Expected behaviors:
   - class can be instantiated as usual, but only one instance is created;
   - apis to access the class instance:
 
-    ```python
+  ```python
     @singleton
-    class Server(object):pass
+    class Server(object):
+      pass
 
     srv = Server()
-    ```
+  ```
 
     or
 
-    ```python
-    srv = Server.instace()
-    ```
+  ```python
+    srv = Server.instance()
+  ```
 
   - the function \__init\__() of decorated class will be called once and only once when the instance is created.
 
-## Example
+Example
+--------
 
 ```python
 
@@ -62,11 +69,12 @@ from py_singleton import singleton
     a3 = A.instance()
 
     assert A.count == 1
-    assert id(a1) == id(a2)
-    assert id(a1) == id(a3)
+    assert a1 is a2
+    assert a1 is a3
 ```
 
-## Limitation
+Limitation
+----------
 
 For best performance, the code to create instance is not thread-safe, however, after the instance is created it should
 be safe for multi-threading.

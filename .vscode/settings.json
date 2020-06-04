@@ -7,5 +7,5 @@
     "python.testing.unittestEnabled": false,
     "python.testing.nosetestsEnabled": false,
     "python.testing.pytestEnabled": true,
-    "python.pythonPath": "/home/randy/.pyenv/versions/2.7.12/bin/python"
+    "python.pythonPath": "/home/randy/.pyenv/versions/py-singleton/bin/python"
 }

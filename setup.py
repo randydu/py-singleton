@@ -26,7 +26,7 @@ version = extract_version('%s/__init__.py' % package_name)
 url = "https://github.com/%s/%s.git" % (author, project_name)
 download_url = "https://github.com/%s/%s/archive/v%s.tar.gz" % (author, project_name, version)
 
-setup(name=package_name, 
+setup(name=project_name, 
     packages= [ package_name ],
     version=version,
     description = "singleton pattern for python 2 and 3",
